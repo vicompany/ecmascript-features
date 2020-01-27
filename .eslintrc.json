@@ -1,0 +1,6 @@
+{
+  "extends": "vi/node",
+  "rules": {
+    "no-console": "off"
+  }
+}
