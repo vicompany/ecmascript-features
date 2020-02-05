@@ -12,7 +12,6 @@ const data = [
 const locale = 'se';
 const settings = {
 	sensitivity: 'base',
-	usage: 'search',
 };
 
 // Use String.prototype.localeCompare() for one-shot checks
