@@ -12,7 +12,7 @@ function withIndex(iterable) {
 	]);
 }
 
-glob('ES+([0-9])/**/*.js', async (error, files) => {
+glob('ES+([0-9])/*/*.js', async (error, files) => {
 	if (error) {
 		throw error;
 	}
