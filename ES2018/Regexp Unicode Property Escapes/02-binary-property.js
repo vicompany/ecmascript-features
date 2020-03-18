@@ -1,8 +1,10 @@
 function isHexString(string) {
+	// eslint-disable-next-line prefer-named-capture-group
 	return /^#([0-9A-F]{3}|[0-9A-F]{6})$/i.test(string);
 }
 
 function isHexStringUnicode(string) {
+	// eslint-disable-next-line prefer-named-capture-group
 	return /^#(\p{Hex_Digit}{3}|\p{Hex_Digit}{6})$/u.test(string);
 }
 
