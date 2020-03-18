@@ -13,10 +13,12 @@ const array = [
 	],
 ];
 
-console.log('Original array', array);
+module.exports = () => {
+	console.log('Original array', array);
 
-for (let i = 0; i <= 2; i++) {
-	const result = array.flat(i);
+	for (let i = 0; i <= 2; i++) {
+		const result = array.flat(i);
 
-	console.log(`flat(${i}) =>`, result);
-}
+		console.log(`flat(${i}) =>`, result);
+	}
+};

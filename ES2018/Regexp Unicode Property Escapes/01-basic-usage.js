@@ -8,6 +8,8 @@ const texts = [
 	'ッツㇱ',
 ];
 
-texts.forEach((string) => {
-	console.log(string, '=>', stringContainsKatakana(string));
-});
+module.exports = () => {
+	texts.forEach((string) => {
+		console.log(string, '=>', stringContainsKatakana(string));
+	});
+};

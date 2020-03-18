@@ -15,8 +15,10 @@ const settings = {
 	sensitivity: 'base',
 };
 
-for (const locale of locales) {
-	const collator = new Intl.Collator(locale, settings);
+module.exports = () => {
+	for (const locale of locales) {
+		const collator = new Intl.Collator(locale, settings);
 
-	console.log(`${locale} >`, data, '=>', data.filter(v => collator.compare(v, query) === 0));
-}
+		console.log(`${locale} >`, data, '=>', data.filter(v => collator.compare(v, query) === 0));
+	}
+};

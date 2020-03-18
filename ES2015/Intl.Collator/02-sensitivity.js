@@ -9,9 +9,11 @@ const sensitivtyList = [
 ];
 /* eslint-enable no-multi-spaces */
 
-sensitivtyList.forEach((sensitivity) => {
-	const collator = new Intl.Collator('nl', { sensitivity });
-	const result = data.sort(collator.compare);
+module.exports = () => {
+	sensitivtyList.forEach((sensitivity) => {
+		const collator = new Intl.Collator('nl', { sensitivity });
+		const result = data.sort(collator.compare);
 
-	console.log({ sensitivity, result });
-});
+		console.log({ sensitivity, result });
+	});
+};

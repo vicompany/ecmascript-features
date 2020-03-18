@@ -9,7 +9,9 @@ const headers = {
 	'Content-Type': 'application/json',
 };
 
-const headersNormalized = Object.fromEntries(Object.entries(headers)
-	.map(([key, value]) => [kebabToCamelCase(key), value]));
+module.exports = () => {
+	const headersNormalized = Object.fromEntries(Object.entries(headers)
+		.map(([key, value]) => [kebabToCamelCase(key), value]));
 
-console.log(headers, '=>', headersNormalized);
+	console.log(headers, '=>', headersNormalized);
+};

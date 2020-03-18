@@ -3,6 +3,8 @@ const entries = [
 	['foo', 'bar'],
 ];
 
-const result = Object.fromEntries(entries);
+module.exports = () => {
+	const result = Object.fromEntries(entries);
 
-console.log(entries, '=>', result);
+	console.log(entries, '=>', result);
+};

@@ -16,7 +16,9 @@ const texts = [
 	'#\u{FF10}\u{FF10}\u{FF10}\u{FF10}\u{FF10}\u{FF10}',
 ];
 
-texts.forEach((string) => {
-	console.log(`isHexString(${string})`, '=>', isHexString(string));
-	console.log(`isHexStringUnicode(${string})`, '=>', isHexStringUnicode(string));
-});
+module.exports = () => {
+	texts.forEach((string) => {
+		console.log(`isHexString(${string})`, '=>', isHexString(string));
+		console.log(`isHexStringUnicode(${string})`, '=>', isHexStringUnicode(string));
+	});
+};

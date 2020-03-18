@@ -13,13 +13,15 @@ const array = [
 	],
 ];
 
-// Identical to array.map(fn).flat(1), but in a single pass
-const result = array.flatMap((value, index) => {
-	if (typeof value === 'string') {
-		return value.replace(/^item\s+/, '');
-	}
+module.exports = () => {
+	// Identical to array.map(fn).flat(1), but in a single pass
+	const result = array.flatMap((value, index) => {
+		if (typeof value === 'string') {
+			return value.replace(/^item\s+/, '');
+		}
 
-	return value;
-});
+		return value;
+	});
 
-console.log(array, '=>', result);
+	console.log(array, '=>', result);
+};
