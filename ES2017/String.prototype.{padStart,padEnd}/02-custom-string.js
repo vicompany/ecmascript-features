@@ -5,9 +5,9 @@ function createColor() {
 
 function colorValueToRgb(value) {
 	return [
+		(value >> 16) & 0xFF,
+		(value >> 8) & 0xFF,
 		value & 0xFF,
-		(value << 2) & 0xFF,
-		(value << 4) & 0xFF,
 	];
 }
 
