@@ -33,8 +33,12 @@ glob('ES+([0-9])/*/*.js', async (error, files) => {
 		// eslint-disable-next-line global-require
 		const fn = require(`./${file}`);
 
-		// eslint-disable-next-line no-await-in-loop
-		await fn();
+		if (typeof fn === 'function') {
+			// eslint-disable-next-line no-await-in-loop
+			await fn();
+		} else {
+			console.error(`File "${file}" does not export a function`);
+		}
 
 		process.stdout.write('\n');
 	}
