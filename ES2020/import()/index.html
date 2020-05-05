@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>import() example</title>
+</head>
+<body>
+
+<main>
+    <pre id="scripts-script">loading /scripts/script.js</pre>
+    <pre id="scripts-module-with-default">loading /scripts/module-with-default.js</pre>
+    <pre id="scripts-module-with-named">loading /scripts/module-with-named.js</pre>
+</main>
+
+<script>
+(async () => {
+    await import('/scripts/script.js');
+
+    const { default: mwd } = await import('/scripts/module-with-default.js');
+
+    document.getElementById('scripts-module-with-default').textContent = mwd();
+
+    const { foo, bar } = await import('/scripts/module-with-named.js');
+
+    document.getElementById('scripts-module-with-named').textContent = `${foo()}\n${bar()}`;
+
+    // Syntax errors:
+    // console.log(import);
+    // console.log(import());
+})();
+</script>
+
+</body>
+</html>
