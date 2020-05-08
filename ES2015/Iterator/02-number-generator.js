@@ -1,8 +1,5 @@
-/* eslint-disable max-classes-per-file */
-class Mathf {
-	static mix(a, b, t) {
-		return a + (t * (b - a));
-	}
+function mix(a, b, t) {
+	return a + (t * (b - a));
 }
 
 class InstrumentPriceGenerator {
@@ -14,7 +11,7 @@ class InstrumentPriceGenerator {
 
 	next() {
 		this._index++;
-		this._price += Mathf.mix(-1, 1, Math.random());
+		this._price += mix(-1, 1, Math.random());
 
 		return {
 			done: this._index === this._count,
