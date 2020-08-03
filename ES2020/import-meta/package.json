@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "npm run start",
+    "start": "http-server"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "dependencies": {}
+}
