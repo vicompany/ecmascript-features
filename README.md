@@ -1,4 +1,4 @@
-# ECMAScript features
+# ECMAScript features ![build status](https://github.com/vicompany/ecmascript-features/workflows/CI/badge.svg)
 
 This repository is a collection of all ECMAScript features that needed exploring.
 
