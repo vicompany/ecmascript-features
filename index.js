@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const glob = require('glob');
+const globby = require('globby');
 
 const args = process.argv.slice(2);
 
@@ -12,10 +12,11 @@ function withIndex(iterable) {
 	]);
 }
 
-glob('ES+([0-9])/*/*.js', async (error, files) => {
-	if (error) {
-		throw error;
-	}
+(async () => {
+	const files = await globby([
+		'ES+([0-9])/*/*.js',
+		'ECMAScript Internationalization API/+([0-9])/*/*.js',
+	]);
 
 	const filesFiltered = PATTERN_FILTER
 		? files.filter(f => f.toLocaleLowerCase().includes(PATTERN_FILTER))
@@ -42,4 +43,4 @@ glob('ES+([0-9])/*/*.js', async (error, files) => {
 
 		process.stdout.write('\n');
 	}
-});
+})();
