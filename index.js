@@ -1,9 +1,10 @@
 const chalk = require('chalk');
 const globby = require('globby');
+const slash = require('slash');
 
 const args = process.argv.slice(2);
 
-const PATTERN_FILTER = args.length > 0 ? args[0].toLocaleLowerCase() : null;
+const PATTERN_FILTER = args.length > 0 ? slash(args[0].toLocaleLowerCase()) : null;
 
 function withIndex(iterable) {
 	return Object.entries(iterable).map(([index, value]) => [
